@@ -15,7 +15,9 @@ import {
   Wrench,
   Coffee,
   Zap,
-  Printer
+  Printer,
+  Package,
+  Layers
 } from 'lucide-react';
 import { Site, SiteExpense } from '@/lib/types';
 import { formatCurrency, formatDateIndian } from '@/lib/utils';
@@ -68,15 +70,15 @@ export default function SiteExpensesPage() {
   const getCategoryInfo = (cat: string) => {
     switch (cat) {
       case 'MATERIAL':
-        return { label: 'सामग्री / माल (रेत, सीमेंट, ईंट)', icon: '🧱', color: 'bg-amber-100 text-amber-900 border-amber-300' };
+        return { label: 'सामग्री (रेत, सीमेंट, ईंट)', icon: Package, color: 'bg-amber-50 text-amber-950 border-amber-200' };
       case 'TRANSPORT':
-        return { label: 'भाड़ा / किराया (गाड़ी, ढुलाई)', icon: '🚚', color: 'bg-blue-100 text-blue-900 border-blue-300' };
+        return { label: 'भाड़ा / ढुलाई', icon: Truck, color: 'bg-blue-50 text-blue-950 border-blue-200' };
       case 'TOOLS':
-        return { label: 'मशीनरी / औजार किराया', icon: '⚙️', color: 'bg-indigo-100 text-indigo-900 border-indigo-300' };
+        return { label: 'मशीनरी / औजार किराया', icon: Wrench, color: 'bg-indigo-50 text-indigo-950 border-indigo-200' };
       case 'TEA_SNACKS':
-        return { label: 'चाय-नाश्ता', icon: '☕', color: 'bg-orange-100 text-orange-900 border-orange-300' };
+        return { label: 'चाय-नाश्ता', icon: Coffee, color: 'bg-orange-50 text-orange-950 border-orange-200' };
       default:
-        return { label: 'अन्य खर्च', icon: '⚡', color: 'bg-slate-100 text-slate-800 border-slate-300' };
+        return { label: 'अन्य खर्च', icon: Layers, color: 'bg-slate-50 text-slate-800 border-slate-200' };
     }
   };
 
@@ -215,8 +217,8 @@ export default function SiteExpensesPage() {
                           <span>{formatDateIndian(exp.date)}</span>
                         </div>
                         <div className="mt-1">
-                          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg border text-[11px] font-bold ${catInfo.color}`}>
-                            <span>{catInfo.icon}</span>
+                          <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg border text-[11px] font-bold ${catInfo.color}`}>
+                            <catInfo.icon className="w-3 h-3 shrink-0" />
                             <span>{catInfo.label}</span>
                           </span>
                         </div>
@@ -277,8 +279,8 @@ export default function SiteExpensesPage() {
                           {formatDateIndian(exp.date)}
                         </td>
                         <td className="py-3 px-3 font-bold">
-                          <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[11px] ${catInfo.color}`}>
-                            <span>{catInfo.icon}</span>
+                          <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-[11px] ${catInfo.color}`}>
+                            <catInfo.icon className="w-3.5 h-3.5 shrink-0" />
                             <span>{catInfo.label}</span>
                           </span>
                         </td>

@@ -18,7 +18,9 @@ import {
   Trash2,
   CheckCircle2,
   ShieldCheck,
-  Share2
+  Share2,
+  Edit2,
+  MapPin
 } from 'lucide-react';
 import { Site, OwnerPayment } from '@/lib/types';
 import { formatCurrency, formatDateIndian } from '@/lib/utils';
@@ -127,7 +129,12 @@ export default function OwnerHisabPage() {
             <h1 className="text-2xl font-black text-black uppercase tracking-tight">
               {site.name}
             </h1>
-            {site.location && <p className="text-xs text-black">📍 {site.location}</p>}
+            {site.location && (
+              <p className="text-xs text-black flex items-center gap-1 mt-0.5">
+                <MapPin className="w-3 h-3" />
+                <span>{site.location}</span>
+              </p>
+            )}
             <p className="text-xs font-bold text-black mt-1">
               मालिक का नाम: {site.ownerName || 'नाम दर्ज नहीं'} {site.ownerPhone ? `(${site.ownerPhone})` : ''}
             </p>
@@ -177,7 +184,8 @@ export default function OwnerHisabPage() {
             onClick={() => setIsEditDealModalOpen(true)}
             className="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-3.5 py-2 rounded-xl text-xs sm:text-sm shadow-xs transition-all active:scale-95"
           >
-            ✏️ ठेका राशि बदलें
+            <Edit2 className="w-3.5 h-3.5" />
+            <span>ठेका राशि बदलें</span>
           </button>
           <button
             onClick={handleWhatsAppOwnerShare}
@@ -215,9 +223,10 @@ export default function OwnerHisabPage() {
               <button
                 type="button"
                 onClick={() => setIsEditDealModalOpen(true)}
-                className="text-[10px] font-black text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 px-2 py-0.5 rounded-lg active:scale-95 transition-all"
+                className="inline-flex items-center gap-1 text-[10px] font-black text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 px-2 py-0.5 rounded-lg active:scale-95 transition-all"
               >
-                ✏️ बदलें
+                <Edit2 className="w-2.5 h-2.5" />
+                <span>बदलें</span>
               </button>
             </div>
             <div className="text-xl sm:text-2xl font-black text-slate-900">
