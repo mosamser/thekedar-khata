@@ -21,20 +21,20 @@ export function Navbar({ onOpenNewSite }: NavbarProps) {
 
   return (
     <>
-      {/* Top Navbar for Desktop & Mobile Header */}
-      <header className="sticky top-0 z-40 bg-slate-900 text-white shadow-md border-b border-slate-800">
+      {/* 1. TOP HEADER (CLEAN, FROSTED WHITE & MODERN) */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md text-slate-900 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border-b border-slate-200/90">
         <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 group active:scale-95 transition-transform">
-              <div className="bg-amber-500 text-slate-950 p-1.5 sm:p-2 rounded-xl font-bold shadow-xs">
-                <HardHat className="w-5 h-5" />
+              <div className="bg-amber-500 text-slate-950 p-1.5 sm:p-2 rounded-xl font-bold shadow-2xs">
+                <HardHat className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div>
-                <span className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-1">
-                  ठेकेदार <span className="text-amber-400">डायरी</span>
+                <span className="text-base sm:text-lg font-black tracking-tight text-slate-900 flex items-center gap-1">
+                  ठेकेदार <span className="text-amber-600">डायरी</span>
                 </span>
-                <span className="block text-[9px] sm:text-[10px] text-slate-400 font-semibold -mt-1 tracking-wider uppercase">
+                <span className="block text-[9px] sm:text-[10px] text-slate-400 font-bold -mt-1 tracking-wider uppercase">
                   Thekedar Khata
                 </span>
               </div>
@@ -53,8 +53,8 @@ export function Navbar({ onOpenNewSite }: NavbarProps) {
                     href={item.href}
                     className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-bold transition-all ${
                       isActive
-                        ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                        ? 'bg-amber-50 text-amber-950 border border-amber-300 shadow-2xs font-black'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -68,9 +68,9 @@ export function Navbar({ onOpenNewSite }: NavbarProps) {
             {onOpenNewSite && (
               <button
                 onClick={onOpenNewSite}
-                className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm shadow-sm active:scale-95 transition-all"
+                className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white font-black px-3.5 py-2 rounded-xl text-xs sm:text-sm shadow-xs active:scale-95 transition-all"
               >
-                <PlusCircle className="w-4 h-4 stroke-[2.5]" />
+                <Plus className="w-4 h-4 stroke-[3]" />
                 <span className="hidden sm:inline">+ नई साइट जोड़ें</span>
                 <span className="sm:hidden">+ नई साइट</span>
               </button>
@@ -79,10 +79,10 @@ export function Navbar({ onOpenNewSite }: NavbarProps) {
         </div>
       </header>
 
-      {/* NATIVE APP BOTTOM NAVIGATION BAR (TOTAL 5 MENUS WITH WHITE BACKGROUND & CENTER ELEVATED '+' BUTTON) */}
+      {/* 2. NATIVE APP BOTTOM DOCK (5 MENUS WITH PURE WHITE FROSTED BACKGROUND & CENTER ELEVATED '+' BUTTON) */}
       <nav
         aria-label="Mobile Navigation"
-        className="no-print md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-slate-200/90 text-slate-600 h-[64px] pb-safe shadow-[0_-4px_24px_rgba(0,0,0,0.07)]"
+        className="no-print md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-2xl border-t border-slate-200/90 text-slate-600 h-[64px] pb-safe shadow-[0_-4px_24px_rgba(0,0,0,0.06)]"
       >
         <div className="grid grid-cols-5 h-full items-center px-1">
           {/* 1. Home / Dashboard */}
@@ -147,7 +147,7 @@ export function Navbar({ onOpenNewSite }: NavbarProps) {
             >
               <Plus className="w-6 h-6 stroke-[3.5] text-slate-950" />
             </button>
-            <span className="text-[9.5px] font-black text-amber-900 tracking-tight mt-1">
+            <span className="text-[9.5px] font-black text-amber-950 tracking-tight mt-1">
               नई साइट
             </span>
           </div>

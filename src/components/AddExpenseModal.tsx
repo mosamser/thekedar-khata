@@ -155,11 +155,11 @@ export function AddExpenseModal({
                 onChange={(e) => setCategory(e.target.value as any)}
                 className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 font-bold"
               >
-                <option value="MATERIAL">🧱 सामग्री / माल (रेत, सीमेंट, गिट्टी, ईंट, सरिया, पानी टैंकर)</option>
-                <option value="TRANSPORT">🚚 भाड़ा / किराया (ट्रैक्टर, टेम्पो, ढुलाई भाड़ा)</option>
-                <option value="TOOLS">⚙️ मशीनरी / औजार किराया (मिक्सर मशीन, वाइब्रेटर, तगाड़ी)</option>
-                <option value="TEA_SNACKS">☕ चाय-नाश्ता (मजदूरों का चाय-नाश्ता खर्च)</option>
-                <option value="OTHER">⚡ अन्य फुटकर खर्च (बिजली, डीजल, प्लास्टिक, आदि)</option>
+                <option value="MATERIAL">सामग्री / माल (रेत, सीमेंट, गिट्टी, ईंट, सरिया, पानी टैंकर)</option>
+                <option value="TRANSPORT">भाड़ा / किराया (ट्रैक्टर, टेम्पो, ढुलाई भाड़ा)</option>
+                <option value="TOOLS">मशीनरी / औजार किराया (मिक्सर मशीन, वाइब्रेटर, तगाड़ी)</option>
+                <option value="TEA_SNACKS">चाय-नाश्ता (मजदूरों का चाय-नाश्ता खर्च)</option>
+                <option value="OTHER">अन्य फुटकर खर्च (बिजली, डीजल, प्लास्टिक, आदि)</option>
               </select>
             </div>
 

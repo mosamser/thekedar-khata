@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, X, Edit3, IndianRupee, Briefcase, Check, Trash2 } from 'lucide-react';
+import { ArrowLeft, X, Edit3, IndianRupee, Briefcase, Check, Trash2, User } from 'lucide-react';
 import { Worker, WorkerRole, WorkerGender } from '@/lib/types';
 
 interface EditWorkerModalProps {
@@ -221,7 +221,7 @@ export function EditWorkerModal({
                     : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
                 }`}
               >
-                <span className="text-base">👨</span>
+                <User className="w-4 h-4 text-blue-600" />
                 <span>पुरुष (Male)</span>
               </button>
 
@@ -234,7 +234,7 @@ export function EditWorkerModal({
                     : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
                 }`}
               >
-                <span className="text-base">👩</span>
+                <User className="w-4 h-4 text-pink-500" />
                 <span>महिला (Female)</span>
               </button>
             </div>
@@ -253,18 +253,18 @@ export function EditWorkerModal({
             >
               {gender === 'FEMALE' ? (
                 <>
-                  <option value="REJA">👩 रेजा (Reja - महिला मजदूर)</option>
-                  <option value="LABOUR">👷 सामान्य लेबर (Labour)</option>
+                  <option value="REJA">रेजा (Reja - महिला मजदूर)</option>
+                  <option value="LABOUR">सामान्य लेबर (Labour)</option>
                   <option value="OTHER">अन्य (Other)</option>
                 </>
               ) : (
                 <>
-                  <option value="MISTRI">🏗️ मिस्त्री (Mistri - कारीगर)</option>
-                  <option value="HELPER">🔨 हेल्पर (Helper - पुरुष हेल्पर)</option>
-                  <option value="VELDAR">🔨 हेल्पर (Helper / Veldar)</option>
-                  <option value="LABOUR">👷 मजदूर / लेबर (Labour)</option>
-                  <option value="CARPENTER">🪚 बढ़ई (Carpenter)</option>
-                  <option value="PAINTER">🎨 पेंटर (Painter)</option>
+                  <option value="MISTRI">मिस्त्री (Mistri - कारीगर)</option>
+                  <option value="HELPER">हेल्पर (Helper - पुरुष हेल्पर)</option>
+                  <option value="VELDAR">हेल्पर (Helper / Veldar)</option>
+                  <option value="LABOUR">मजदूर / लेबर (Labour)</option>
+                  <option value="CARPENTER">बढ़ई (Carpenter)</option>
+                  <option value="PAINTER">पेंटर (Painter)</option>
                   <option value="OTHER">अन्य (Other)</option>
                 </>
               )}

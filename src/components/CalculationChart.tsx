@@ -210,7 +210,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
             </h1>
             {site.location && (
               <p className="text-xs text-slate-700 font-semibold mt-0.5">
-                📍 जगह / पता: {site.location}
+                जगह / पता: {site.location}
               </p>
             )}
             {/* Start and End Date on the left */}
@@ -422,7 +422,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
                 mobileMode === 'TABLE' ? 'bg-amber-500 text-slate-950 shadow-xs' : 'text-slate-300'
               }`}
             >
-              📊 पूरी टेबल
+              पूरी टेबल
             </button>
             <button
               onClick={() => setMobileMode('CARDS')}
@@ -430,7 +430,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
                 mobileMode === 'CARDS' ? 'bg-amber-500 text-slate-950 shadow-xs' : 'text-slate-300'
               }`}
             >
-              📋 मजदूर कार्ड्स
+              मजदूर कार्ड्स
             </button>
           </div>
         </div>
@@ -538,7 +538,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
             {/* Sabhi ka Grand Total Card on Mobile */}
             <div className="bg-gradient-to-br from-slate-900 to-slate-850 text-white p-4 rounded-2xl shadow-md border border-slate-800 space-y-2">
               <span className="text-[10px] uppercase tracking-wider text-amber-400 font-black block">
-                🏁 कुल जोड़ (Grand Total)
+                कुल जोड़ (Grand Total)
               </span>
               <div className="grid grid-cols-2 gap-2 text-xs border-b border-slate-800 pb-2.5">
                 <div>
@@ -570,8 +570,8 @@ export function CalculationChart({ summary }: CalculationChartProps) {
         <div className={`${mobileMode === 'CARDS' ? 'hidden sm:block' : 'block'} print:!block print-table-container`}>
           {/* Mobile Swipe Helper Banner */}
           <div className="no-print sm:hidden bg-amber-50 text-amber-900 border-b border-amber-200 px-3 py-1.5 text-[11px] font-black flex items-center justify-between">
-            <span>👈 दायें-बायें स्वाइप करें</span>
-            <span>पूरी हाजिरी तारीखें देखें 👉</span>
+            <span>दायें-बायें स्क्रोल करें</span>
+            <span>पूरी हाजिरी तारीखें देखें</span>
           </div>
 
           {/* Screen Legend (Hidden in Print) */}
@@ -752,10 +752,10 @@ export function CalculationChart({ summary }: CalculationChartProps) {
                       <div className="flex items-center justify-center gap-1">
                         <button
                           onClick={() => setPayingWorker(row)}
-                          className="px-1.5 py-0.5 text-[9px] font-bold text-emerald-800 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 rounded transition-colors whitespace-nowrap active:scale-95"
+                          className="px-2 py-0.5 text-[10px] font-bold text-emerald-800 bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 rounded transition-colors whitespace-nowrap active:scale-95"
                           title="काम पूरा होने पर भुगतान करें"
                         >
-                          💰 भुगतान
+                          भुगतान (Pay)
                         </button>
                         <button
                           onClick={() => setSelectedRowForSlip(row)}
@@ -925,7 +925,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
                   >
-                    <span className="text-sm">🟢 P</span>
+                    <span className="text-sm font-black">P</span>
                     <span className="text-[10px] font-semibold">पूरा दिन</span>
                   </button>
 
@@ -941,7 +941,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
                   >
-                    <span className="text-sm">🟡 HD</span>
+                    <span className="text-sm font-black">HD</span>
                     <span className="text-[10px] font-semibold">आधा दिन</span>
                   </button>
 
@@ -957,7 +957,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
                   >
-                    <span className="text-sm">🔴 A</span>
+                    <span className="text-sm font-black">A</span>
                     <span className="text-[10px] font-semibold">गैरहाजिर</span>
                   </button>
 
@@ -973,7 +973,7 @@ export function CalculationChart({ summary }: CalculationChartProps) {
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
                   >
-                    <span className="text-sm">🔵 OT</span>
+                    <span className="text-sm font-black">OT</span>
                     <span className="text-[10px] font-semibold">ओवरटाइम</span>
                   </button>
                 </div>

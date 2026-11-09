@@ -14,7 +14,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 text-slate-900 pb-24 md:pb-8">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 pb-24 md:pb-8">
       <Navbar onOpenNewSite={() => setIsSiteModalOpen(true)} />
       
       <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">

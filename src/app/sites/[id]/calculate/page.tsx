@@ -203,11 +203,12 @@ export default function SiteCalculatePage() {
               onClick={handleSiteStartToToday}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs ${
                 activePreset === 'START_TO_TODAY'
-                  ? 'bg-amber-500 text-slate-950 font-black ring-2 ring-amber-500 ring-offset-1'
+                  ? 'bg-amber-500 text-slate-950 font-black'
                   : 'bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300'
               }`}
             >
-              <span>⭐ साइट शुरू से आज तक</span>
+              <Calendar className="w-3.5 h-3.5" />
+              <span>साइट शुरू से आज तक</span>
               {site && (
                 <span className="text-[10px] opacity-80">
                   ({formatDateIndian(site.startDate).split(' ')[0]} {formatDateIndian(site.startDate).split(' ')[1]} से)
@@ -221,11 +222,11 @@ export default function SiteCalculatePage() {
               onClick={handleTodayOnly}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activePreset === 'TODAY_ONLY'
-                  ? 'bg-slate-900 text-white font-black'
+                  ? 'bg-slate-900 text-white font-black shadow-xs'
                   : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
               }`}
             >
-              📅 सिर्फ आज का हिसाब (Today Only)
+              सिर्फ आज का हिसाब
             </button>
 
             {/* Past 7 Days */}
@@ -234,11 +235,11 @@ export default function SiteCalculatePage() {
               onClick={() => handleQuickPastDays(7)}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activePreset === 'WEEK'
-                  ? 'bg-slate-900 text-white font-black'
+                  ? 'bg-slate-900 text-white font-black shadow-xs'
                   : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
               }`}
             >
-              📅 पिछले 7 दिन (Past 7 Days)
+              पिछले 7 दिन
             </button>
 
             {/* Full Month */}
@@ -247,11 +248,11 @@ export default function SiteCalculatePage() {
               onClick={handleThisMonth}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activePreset === 'MONTH'
-                  ? 'bg-blue-600 text-white font-black'
-                  : 'bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200'
+                  ? 'bg-slate-900 text-white font-black shadow-xs'
+                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
               }`}
             >
-              📆 इस महीने का पूरा हिसाब (Full Month)
+              इस महीने का पूरा हिसाब
             </button>
           </div>
         </div>
@@ -299,9 +300,9 @@ export default function SiteCalculatePage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black py-2.5 px-4 rounded-xl text-xs sm:text-sm shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full bg-slate-900 hover:bg-slate-800 text-white font-black py-2.5 px-4 rounded-xl text-xs sm:text-sm shadow-xs active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
             >
-              <Calculator className="w-4 h-4 stroke-[2.5]" />
+              <Calculator className="w-4 h-4 text-amber-400 stroke-[2.5]" />
               <span>{loading ? 'कैलकुलेट हो रहा है...' : 'कुल हिसाब देखें (Calculate)'}</span>
             </button>
           </div>

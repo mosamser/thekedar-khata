@@ -363,10 +363,10 @@ export default function OwnerHisabPage() {
 
                   <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
                     <span className="text-slate-600 font-semibold">
-                      {p.paymentMode === 'CASH' && '💵 नकद (Cash)'}
-                      {p.paymentMode === 'UPI' && '📱 UPI (GPay/PhonePe)'}
-                      {p.paymentMode === 'CHEQUE' && '🧾 चेक (Cheque)'}
-                      {p.paymentMode === 'BANK_TRANSFER' && '🏦 बैंक ट्रांसफर'}
+                      {p.paymentMode === 'CASH' && 'नकद (Cash)'}
+                      {p.paymentMode === 'UPI' && 'UPI (GPay/PhonePe)'}
+                      {p.paymentMode === 'CHEQUE' && 'चेक (Cheque)'}
+                      {p.paymentMode === 'BANK_TRANSFER' && 'बैंक ट्रांसफर'}
                     </span>
 
                     <button
@@ -420,10 +420,10 @@ export default function OwnerHisabPage() {
                         </span>
                       </td>
                       <td className="py-3 px-3 text-slate-600 font-medium">
-                        {p.paymentMode === 'CASH' && '💵 नकद (Cash)'}
-                        {p.paymentMode === 'UPI' && '📱 UPI (GPay/PhonePe)'}
-                        {p.paymentMode === 'CHEQUE' && '🧾 चेक (Cheque)'}
-                        {p.paymentMode === 'BANK_TRANSFER' && '🏦 बैंक ट्रांसफर'}
+                        {p.paymentMode === 'CASH' && 'नकद (Cash)'}
+                        {p.paymentMode === 'UPI' && 'UPI (GPay/PhonePe)'}
+                        {p.paymentMode === 'CHEQUE' && 'चेक (Cheque)'}
+                        {p.paymentMode === 'BANK_TRANSFER' && 'बैंक ट्रांसफर'}
                       </td>
                       <td className="py-3 px-3 text-slate-500">{p.notes || '-'}</td>
                       <td className="py-3 px-3 text-right font-black text-sm text-emerald-700">

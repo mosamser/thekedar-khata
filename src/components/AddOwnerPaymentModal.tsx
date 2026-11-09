@@ -182,10 +182,10 @@ export function AddOwnerPaymentModal({
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  { id: 'CASH', label: '💵 नकद (Cash)' },
-                  { id: 'UPI', label: '📱 UPI (GPay/PhonePe)' },
-                  { id: 'CHEQUE', label: '🧾 चेक (Cheque)' },
-                  { id: 'BANK_TRANSFER', label: '🏦 बैंक ट्रांसफर (NEFT)' },
+                  { id: 'CASH', label: 'नकद (Cash)' },
+                  { id: 'UPI', label: 'UPI (GPay/PhonePe)' },
+                  { id: 'CHEQUE', label: 'चेक (Cheque)' },
+                  { id: 'BANK_TRANSFER', label: 'बैंक ट्रांसफर (NEFT)' },
                 ].map((m) => (
                   <button
                     key={m.id}

@@ -210,7 +210,7 @@ export function PayWorkerModal({
                     : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
-                💵 नकद (Cash)
+                नकद (Cash)
               </button>
               <button
                 type="button"
@@ -221,7 +221,7 @@ export function PayWorkerModal({
                     : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
-                📱 UPI (GPay / PhonePe)
+                UPI (GPay / PhonePe)
               </button>
             </div>
           </div>

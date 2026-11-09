@@ -178,7 +178,7 @@ export function WorkerSlipModal({
                           <td className="py-2 px-2 text-right text-slate-500 text-[11px]">
                             {adv.reason ? `${adv.reason} • ` : ''}
                             <span className="font-medium text-slate-600">
-                              {adv.paymentMode === 'UPI' ? '📱 UPI' : '💵 नकद'}
+                              {adv.paymentMode === 'UPI' ? 'UPI' : 'नकद'}
                             </span>
                           </td>
                         </tr>
