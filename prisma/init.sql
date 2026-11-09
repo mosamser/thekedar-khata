@@ -1,0 +1,88 @@
+-- PostgreSQL Initialization Script for Thekedar Khata
+-- Run this in your PostgreSQL database (e.g. psql -U postgres -d thekedar_db -f init.sql)
+
+CREATE TABLE IF NOT EXISTS "Site" (
+    "id" TEXT PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "location" TEXT,
+    "startDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "endDate" TIMESTAMP(3),
+    "status" TEXT NOT NULL DEFAULT 'ACTIVE',
+    "ownerName" TEXT,
+    "ownerPhone" TEXT,
+    "contractType" TEXT NOT NULL DEFAULT 'LUMP_SUM',
+    "contractAmount" DOUBLE PRECISION NOT NULL DEFAULT 0,
+    "notes" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS "Worker" (
+    "id" TEXT PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "phone" TEXT,
+    "role" TEXT NOT NULL DEFAULT 'LABOUR',
+    "defaultRate" DOUBLE PRECISION NOT NULL DEFAULT 500,
+    "isActive" BOOLEAN NOT NULL DEFAULT true,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS "SiteWorker" (
+    "id" TEXT PRIMARY KEY,
+    "siteId" TEXT NOT NULL REFERENCES "Site"("id") ON DELETE CASCADE,
+    "workerId" TEXT NOT NULL REFERENCES "Worker"("id") ON DELETE CASCADE,
+    "customRate" DOUBLE PRECISION,
+    "joinedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "isActive" BOOLEAN NOT NULL DEFAULT true,
+    CONSTRAINT "SiteWorker_site_worker_unique" UNIQUE ("siteId", "workerId")
+);
+
+CREATE TABLE IF NOT EXISTS "Attendance" (
+    "id" TEXT PRIMARY KEY,
+    "siteId" TEXT NOT NULL REFERENCES "Site"("id") ON DELETE CASCADE,
+    "workerId" TEXT NOT NULL REFERENCES "Worker"("id") ON DELETE CASCADE,
+    "date" TIMESTAMP(3) NOT NULL,
+    "status" TEXT NOT NULL DEFAULT 'PRESENT',
+    "overtimeHours" DOUBLE PRECISION NOT NULL DEFAULT 0,
+    "notes" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Attendance_site_worker_date_unique" UNIQUE ("siteId", "workerId", "date")
+);
+
+CREATE TABLE IF NOT EXISTS "Advance" (
+    "id" TEXT PRIMARY KEY,
+    "siteId" TEXT NOT NULL REFERENCES "Site"("id") ON DELETE CASCADE,
+    "workerId" TEXT NOT NULL REFERENCES "Worker"("id") ON DELETE CASCADE,
+    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "amount" DOUBLE PRECISION NOT NULL,
+    "reason" TEXT,
+    "paymentMode" TEXT NOT NULL DEFAULT 'CASH',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS "OwnerPayment" (
+    "id" TEXT PRIMARY KEY,
+    "siteId" TEXT NOT NULL REFERENCES "Site"("id") ON DELETE CASCADE,
+    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "amount" DOUBLE PRECISION NOT NULL,
+    "paymentMode" TEXT NOT NULL DEFAULT 'CASH',
+    "stage" TEXT,
+    "notes" TEXT,
+    "receivedBy" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS "SiteExpense" (
+    "id" TEXT PRIMARY KEY,
+    "siteId" TEXT NOT NULL REFERENCES "Site"("id") ON DELETE CASCADE,
+    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "category" TEXT NOT NULL,
+    "amount" DOUBLE PRECISION NOT NULL,
+    "description" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+

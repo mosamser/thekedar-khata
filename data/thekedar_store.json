@@ -1,0 +1,556 @@
+{
+  "workers": [
+    {
+      "id": "w-1794217802479",
+      "name": "Raju",
+      "role": "LABOUR",
+      "defaultRate": 100,
+      "isActive": true,
+      "createdAt": "2026-11-09T09:50:02.480Z",
+      "gender": "MALE"
+    },
+    {
+      "id": "w-1",
+      "name": "रमेश कुमार",
+      "role": "MISTRI",
+      "defaultRate": 850,
+      "isActive": true,
+      "createdAt": "2026-11-09T09:48:28.074Z",
+      "gender": "MALE"
+    },
+    {
+      "id": "w-2",
+      "name": "सुरेश पाल",
+      "role": "VELDAR",
+      "defaultRate": 550,
+      "isActive": true,
+      "createdAt": "2026-11-09T09:48:28.074Z",
+      "gender": "MALE"
+    },
+    {
+      "id": "w-3",
+      "name": "दिनेश यादव",
+      "role": "LABOUR",
+      "defaultRate": 500,
+      "isActive": true,
+      "createdAt": "2026-11-09T09:48:28.074Z",
+      "gender": "MALE"
+    },
+    {
+      "id": "w-4",
+      "name": "सुनीता देवी",
+      "role": "REJA",
+      "defaultRate": 500,
+      "isActive": false,
+      "createdAt": "2026-11-09T09:48:28.074Z",
+      "gender": "FEMALE"
+    },
+    {
+      "id": "w-5",
+      "name": "कमलेश वर्मा",
+      "role": "PAINTER",
+      "defaultRate": 750,
+      "isActive": true,
+      "createdAt": "2026-11-09T09:48:28.074Z",
+      "gender": "MALE"
+    }
+  ],
+  "sites": [
+    {
+      "id": "site-1794217815541",
+      "name": "Sohawal Road",
+      "location": "Sohawal Road",
+      "startDate": "2026-11-09",
+      "endDate": null,
+      "status": "ACTIVE",
+      "ownerName": null,
+      "ownerPhone": null,
+      "contractType": "LUMP_SUM",
+      "contractAmount": 120000,
+      "notes": null,
+      "createdAt": "2026-11-09T09:50:15.541Z"
+    },
+    {
+      "id": "site-1",
+      "name": "शर्मा जी कोठी (सेक्टर 62)",
+      "location": "प्लॉट 45, सेक्टर 62, नोएडा",
+      "startDate": "2026-10-26",
+      "endDate": null,
+      "status": "ACTIVE",
+      "ownerName": "श्री राजेश शर्मा",
+      "ownerPhone": "9811223344",
+      "contractType": "LUMP_SUM",
+      "contractAmount": 350000,
+      "notes": "G+2 मकान निर्माण (लेबर रेट ठेका)",
+      "createdAt": "2026-10-26T09:48:28.074Z"
+    },
+    {
+      "id": "site-2",
+      "name": "गोयल प्लाजा (दुकानें)",
+      "location": "मेन मार्केट, सदर बाजार",
+      "startDate": "2026-10-10",
+      "endDate": null,
+      "status": "ACTIVE",
+      "ownerName": "श्री विकास गोयल",
+      "ownerPhone": "9822334455",
+      "contractType": "SQUARE_FEET",
+      "contractAmount": 180000,
+      "notes": "प्लास्टर और फर्श का काम",
+      "createdAt": "2026-10-10T09:48:28.074Z"
+    }
+  ],
+  "siteWorkers": [
+    {
+      "id": "sw-1",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "customRate": 850,
+      "joinedAt": "2026-11-09T09:48:28.074Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-2",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "customRate": 550,
+      "joinedAt": "2026-11-09T09:48:28.074Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-3",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "customRate": 500,
+      "joinedAt": "2026-11-09T09:48:28.074Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-4",
+      "siteId": "site-2",
+      "workerId": "w-1",
+      "customRate": 900,
+      "joinedAt": "2026-11-09T09:48:28.074Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-1794217815541-v8sd",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1",
+      "customRate": 850,
+      "joinedAt": "2026-11-09T09:50:15.541Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-1794217815541-yxqt",
+      "siteId": "site-1794217815541",
+      "workerId": "w-2",
+      "customRate": 550,
+      "joinedAt": "2026-11-09T09:50:15.541Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-1794217815541-s9xn",
+      "siteId": "site-1794217815541",
+      "workerId": "w-3",
+      "customRate": 500,
+      "joinedAt": "2026-11-09T09:50:15.541Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-1794217815541-k2rv",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1794217802479",
+      "customRate": 100,
+      "joinedAt": "2026-11-09T09:50:15.541Z",
+      "isActive": true
+    },
+    {
+      "id": "sw-1794217815541-w4",
+      "siteId": "site-1794217815541",
+      "workerId": "w-4",
+      "customRate": 500,
+      "joinedAt": "2026-11-09T09:50:15.541Z",
+      "isActive": false
+    }
+  ],
+  "attendances": [
+    {
+      "id": "att-1-6",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-03",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-2-6",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-03",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-3-6",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "date": "2026-11-03",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1-5",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-04",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-2-5",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-04",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-3-5",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "date": "2026-11-04",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1-4",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-05",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-2-4",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-05",
+      "status": "ABSENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-3-4",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "date": "2026-11-05",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1-3",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-06",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-2-3",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-06",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-3-3",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "date": "2026-11-06",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1-2",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-07",
+      "status": "HALF_DAY",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-2-2",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-07",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-3-2",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "date": "2026-11-07",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1-1",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-2-1",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-3-1",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1-0",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 2
+    },
+    {
+      "id": "att-2-0",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-3-0",
+      "siteId": "site-1",
+      "workerId": "w-3",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794217877015-2urp",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794217877015-5hzu",
+      "siteId": "site-1794217815541",
+      "workerId": "w-2",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794217877015-zwh4",
+      "siteId": "site-1794217815541",
+      "workerId": "w-3",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794217877015-xet9",
+      "siteId": "site-1794217815541",
+      "workerId": "w-4",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 2
+    },
+    {
+      "id": "att-1794217877015-2g81",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1794217802479",
+      "date": "2026-11-09",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221605625-r78b",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221605625-e5oj",
+      "siteId": "site-1794217815541",
+      "workerId": "w-2",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221605625-jmht",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1794217802479",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221605625-5mum",
+      "siteId": "site-1794217815541",
+      "workerId": "w-3",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221605625-r955",
+      "siteId": "site-1794217815541",
+      "workerId": "w-4",
+      "date": "2026-11-08",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221614576-msnq",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1",
+      "date": "2026-11-07",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221614576-aazi",
+      "siteId": "site-1794217815541",
+      "workerId": "w-2",
+      "date": "2026-11-07",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221614576-0pvu",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1794217802479",
+      "date": "2026-11-07",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221614576-4f54",
+      "siteId": "site-1794217815541",
+      "workerId": "w-3",
+      "date": "2026-11-07",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    },
+    {
+      "id": "att-1794221614576-m3o8",
+      "siteId": "site-1794217815541",
+      "workerId": "w-4",
+      "date": "2026-11-07",
+      "status": "PRESENT",
+      "overtimeHours": 0
+    }
+  ],
+  "advances": [
+    {
+      "id": "adv-1",
+      "siteId": "site-1",
+      "workerId": "w-1",
+      "date": "2026-11-07",
+      "amount": 500,
+      "reason": "राशन का सामान",
+      "paymentMode": "CASH"
+    },
+    {
+      "id": "adv-2",
+      "siteId": "site-1",
+      "workerId": "w-2",
+      "date": "2026-11-08",
+      "amount": 300,
+      "reason": "दवाई के लिए",
+      "paymentMode": "CASH"
+    },
+    {
+      "id": "adv-1794217877015-28a7",
+      "siteId": "site-1794217815541",
+      "workerId": "w-3",
+      "date": "2026-11-09",
+      "amount": 144,
+      "reason": "दैनिक खर्चा",
+      "paymentMode": "CASH"
+    },
+    {
+      "id": "adv-1794217877015-6hp2",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1794217802479",
+      "date": "2026-11-09",
+      "amount": 100,
+      "reason": "दैनिक खर्चा",
+      "paymentMode": "CASH"
+    },
+    {
+      "id": "adv-1794223964239",
+      "siteId": "site-1794217815541",
+      "workerId": "w-1",
+      "date": "2026-11-09",
+      "amount": 2550,
+      "reason": "काम पूरा होने पर फाइनल भुगतान (Settlement)",
+      "paymentMode": "CASH"
+    }
+  ],
+  "ownerPayments": [
+    {
+      "id": "op-1794221859208",
+      "siteId": "site-2",
+      "date": "2026-11-09",
+      "amount": 50000,
+      "paymentMode": "CASH",
+      "stage": "छत / लेंटर ढलाई किश्त",
+      "notes": "",
+      "receivedBy": "पापा (ठेकेदार)"
+    },
+    {
+      "id": "op-1794218166704",
+      "siteId": "site-1794217815541",
+      "date": "2026-11-09",
+      "amount": 50000,
+      "paymentMode": "CASH",
+      "stage": "छत / लेंटर ढलाई किश्त",
+      "notes": "",
+      "receivedBy": "पापा (ठेकेदार)"
+    },
+    {
+      "id": "op-1",
+      "siteId": "site-1",
+      "date": "2026-10-30",
+      "amount": 50000,
+      "paymentMode": "BANK_TRANSFER",
+      "stage": "काम शुरू होने पर एडवांस",
+      "notes": "चेक द्वारा प्राप्त हुआ",
+      "receivedBy": "पापा (ठेकेदार)"
+    },
+    {
+      "id": "op-2",
+      "siteId": "site-1",
+      "date": "2026-11-06",
+      "amount": 40000,
+      "paymentMode": "UPI",
+      "stage": "ग्राउंड फ्लोर दीवार पूरा होने पर",
+      "notes": "Google Pay द्वारा प्राप्त",
+      "receivedBy": "पापा"
+    }
+  ],
+  "expenses": []
+}

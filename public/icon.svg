@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="128" fill="#0f172a"/>
+  <!-- Glowing circle -->
+  <circle cx="256" cy="256" r="200" fill="#f59e0b" opacity="0.15"/>
+  <!-- Construction Helmet Icon -->
+  <g fill="#f59e0b" transform="translate(64, 70) scale(0.75)">
+    <path d="M256 64C160 64 80 144 80 240v32h352v-32c0-96-80-176-176-176z"/>
+    <path d="M48 272h416c17.7 0 32 14.3 32 32s-14.3 32-32 32H48c-17.7 0-32-14.3-32-32s14.3-32 32-32z" fill="#d97706"/>
+    <rect x="236" y="48" width="40" height="224" rx="16" fill="#fbbf24"/>
+  </g>
+  <!-- Text Label -->
+  <text x="256" y="420" font-family="-apple-system, sans-serif" font-weight="900" font-size="44" fill="#ffffff" text-anchor="middle" letter-spacing="2">ठेकेदार डायरी</text>
+  <text x="256" y="455" font-family="-apple-system, sans-serif" font-weight="700" font-size="20" fill="#f59e0b" text-anchor="middle" letter-spacing="4">THEKEDAR KHATA</text>
+</svg>
+

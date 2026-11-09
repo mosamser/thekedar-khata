@@ -1,0 +1,119 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Site {
+  id             String         @id @default(uuid())
+  name           String
+  location       String?
+  startDate      DateTime       @default(now())
+  endDate        DateTime?
+  status         String         @default("ACTIVE") // ACTIVE, COMPLETED, PAUSED
+  ownerName      String?
+  ownerPhone     String?
+  contractType   String         @default("LUMP_SUM") // LUMP_SUM, SQUARE_FEET, DAILY
+  contractAmount Float          @default(0) // कुल तय ठेका / रकम
+  notes          String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  siteWorkers    SiteWorker[]
+  attendances    Attendance[]
+  advances       Advance[]
+  ownerPayments  OwnerPayment[]
+  expenses       SiteExpense[]
+}
+
+model Worker {
+  id          String       @id @default(uuid())
+  name        String
+  phone       String?
+  role        String       @default("MISTRI") // MISTRI, HELPER, PAINTER, PLUMBER, LABOUR
+  defaultRate Float        @default(500)
+  isActive    Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  siteWorkers SiteWorker[]
+  attendances Attendance[]
+  advances    Advance[]
+}
+
+model SiteWorker {
+  id         String   @id @default(uuid())
+  siteId     String
+  workerId   String
+  customRate Float?
+  joinedAt   DateTime @default(now())
+  isActive   Boolean  @default(true)
+
+  site   Site   @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  worker Worker @relation(fields: [workerId], references: [id], onDelete: Cascade)
+
+  @@unique([siteId, workerId])
+}
+
+model Attendance {
+  id            String   @id @default(uuid())
+  siteId        String
+  workerId      String
+  date          DateTime
+  status        String   @default("PRESENT") // PRESENT, HALF_DAY, ABSENT, OVERTIME
+  overtimeHours Float    @default(0)
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  site   Site   @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  worker Worker @relation(fields: [workerId], references: [id], onDelete: Cascade)
+
+  @@unique([siteId, workerId, date])
+}
+
+model Advance {
+  id          String   @id @default(uuid())
+  siteId      String
+  workerId    String
+  date        DateTime @default(now())
+  amount      Float
+  reason      String?
+  paymentMode String   @default("CASH") // CASH, UPI
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  site   Site   @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  worker Worker @relation(fields: [workerId], references: [id], onDelete: Cascade)
+}
+
+model OwnerPayment {
+  id          String   @id @default(uuid())
+  siteId      String
+  date        DateTime @default(now())
+  amount      Float
+  paymentMode String   @default("CASH") // CASH, UPI, CHEQUE, BANK_TRANSFER
+  stage       String?  // नींव, लेंटर/छत, प्लास्टर, फाइनल
+  notes       String?
+  receivedBy  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  site Site @relation(fields: [siteId], references: [id], onDelete: Cascade)
+}
+
+model SiteExpense {
+  id          String   @id @default(uuid())
+  siteId      String
+  date        DateTime @default(now())
+  category    String   // MATERIAL, TRANSPORT, TOOLS, TEA_SNACKS, OTHER
+  amount      Float
+  description String?
+  createdAt   DateTime @default(now())
+
+  site Site @relation(fields: [siteId], references: [id], onDelete: Cascade)
+}
+

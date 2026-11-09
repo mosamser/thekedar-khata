@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+button, a, input, select {
+  touch-action: manipulation;
+}
+
+/* Safe area insets for mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+/* Hide scrollbar for clean mobile chips */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar for horizontal attendance tables */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.print-only {
+  display: none;
+}
+
+/* Print styling for colorful master register & slips */
+@media print {
+  @page {
+    size: landscape;
+    margin: 5mm 6mm;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 8pt !important;
+  }
+  .no-print, header, nav, footer {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-table-container {
+    display: block !important;
+  }
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+  th, td {
+    padding: 2px 3px !important;
+  }
+
+  /* Attendance badges for colorful & crisp print output */
+  .attendance-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    border-radius: 3px !important;
+    box-sizing: border-box !important;
+  }
+  .attendance-badge-P {
+    background-color: #10b981 !important;
+    color: #ffffff !important;
+    border: 1px solid #059669 !important;
+  }
+  .attendance-badge-HD {
+    background-color: #f59e0b !important;
+    color: #ffffff !important;
+    border: 1px solid #d97706 !important;
+  }
+  .attendance-badge-A {
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+    border: 1px solid #dc2626 !important;
+  }
+  .attendance-badge-OT {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+    border: 1px solid #4338ca !important;
+  }
+  .attendance-badge-- {
+    background-color: #f1f5f9 !important;
+    color: #64748b !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+}
+
